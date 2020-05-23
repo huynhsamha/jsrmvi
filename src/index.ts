@@ -38,24 +38,30 @@ const DefaultOption: Options = {
 };
 
 export const removeVI = (text: string = '', options: Options = DefaultOption) => {
+	const {
+		ignoreCase = DefaultOption.ignoreCase,
+		replaceSpecialCharacters = DefaultOption.replaceSpecialCharacters,
+		concatBy = DefaultOption.concatBy,
+	} = options;
+
 	let res = text;
-	if (options.ignoreCase) {
+	if (ignoreCase) {
 		res = res.toLowerCase();
 	}
 	PartternLowercase.forEach((t) => {
 		res = res.replace(t.regex, t.char);
 	});
-	if (!options.ignoreCase) {
+	if (!ignoreCase) {
 		PartternUppercase.forEach((t) => {
 			res = res.replace(t.regex, t.char);
 		});
 	}
-	if (options.replaceSpecialCharacters) {
-		const c = options.concatBy;
+	if (replaceSpecialCharacters) {
+		const c = concatBy;
 		res = res
-			.replace(specialCharRegex, c)
-			.replace(new RegExp(`${c}+${c}`, 'g'), c) // -- to -
-			.replace(new RegExp(`^${c}+|${c}+$`, 'g'), ''); // begin and end with -
+			.replace(specialCharRegex, c) // replace special characters to c
+			.replace(new RegExp(`\\${c}+\\${c}`, 'g'), c) // replace repeated c to single c (e.g. `a---b` to `a-b`)
+			.replace(new RegExp(`^\\${c}+|\\${c}+$`, 'g'), ''); // remove begin and end characters with c
 	}
 	return res;
 };

@@ -1,6 +1,6 @@
 {
   "name": "js-remove-vietnamese",
-  "version": "1.2.1",
+  "version": "0.0.1",
   "description": "Convert Vietnamese words to Latin alphabet - Use for both Node.JS and Browser.",
   "author": {
     "name": "huynhsamha",
@@ -16,15 +16,25 @@
     "type": "git",
     "url": "git+https://github.com/huynhsamha/js-remove-vietnamese.git"
   },
-  "files": ["dist/**/*"],
+  "files": [
+    "dist/**/*"
+  ],
+  "browser": "dist/jsrmvi.min.js",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "lint": "tslint -p tsconfig.json"
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "rollup": "rollup -c",
+    "clean": "rm -rf dist",
+    "dist": "yarn clean & yarn format & yarn lint & yarn build & (sleep 4 && yarn rollup)"
   },
   "devDependencies": {
     "prettier": "^2.0.5",
+    "rollup": "^2.10.8",
+    "rollup-plugin-babel-minify": "^10.0.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
     "tslint": "^6.1.2",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.9.2"
