@@ -9,17 +9,20 @@ Convert Vietnamese words to Latin alphabet - Use for both Node.JS and Browser.
 
 ### NodeJS
 
-`$ npm install --save js-remove-vietnamese`
-
-or
-
-`$ yarn add js-remove-vietnamese`
+```bash
+npm install --save js-remove-vietnamese
+# or
+yarn add js-remove-vietnamese
+```
 
 ### Browser
 
-Download `jsrmvi.min.js` at [here]() or use script tag
+Download `jsrmvi.min.js` at [here](https://unpkg.com/js-remove-vietnamese/dist/jsrmvi.min.js) or use script tag
 
 ```html
+<script src="https://unpkg.com/js-remove-vietnamese/dist/jsrmvi.min.js"></script>
+<!-- or -->
+<script src="[path/to/dist]/jsrmvi.min.js"></script>
 ```
 
 ## Usage
@@ -29,7 +32,7 @@ Download `jsrmvi.min.js` at [here]() or use script tag
 ```js
 const { removeVI, DefaultOption } = require('js-remove-vietnamese');
 
-// Default options for function removeVI()
+// Default option used in function removeVI()
 console.log(DefaultOption);
 /*
 {
@@ -81,13 +84,14 @@ interface Options {
 
 #### More examples
 
-You can see more examples in directory ['./test/node/index.js'](`test/node/index.js`)
+You can see more examples in directory [`./test/node/index.js`](./test/node/index.js)
 
-#### Browser
+### Browser
+
+After load file `jsrmvi.min.js`, object `jsrmvi` will be exported globally to window object. We can access `jsrmvi` by `window.jsrmvi` or `jsrmvi` directly.
 
 ```html
-<!-- object `jsrmvi` will be exported globally to window object -->
-<script src="[path/to/dist]/jsrmvi.min.js"></script>
+<script src="https://unpkg.com/js-remove-vietnamese/dist/jsrmvi.min.js"></script>
 
 <script>
 	const { removeVI, DefaultOption } = jsrmvi;
@@ -106,51 +110,40 @@ You can see more examples in directory ['./test/node/index.js'](`test/node/index
 </script>
 ```
 
-Examples are similar with NodeJS. You can try with [`./test/browser/index.html`](`test/browser/index.html`) on browser.
+Examples are similar with NodeJS. You can try with [`test/browser/index.html`](./test/browser/index.html) on browser.
 
-Output on browser:
+Output on browser for examples in file [`test/browser/index.html`](./test/browser/index.html):
 
 <img src="./assets/img/browser.png" alt="Browser result">
 
-
-##### 1. NPM Package
-
-```html
-<script src="./node_modules/js-remove-vietnamese/dist/js-remove-vietnamese.js"></script>
-<!-- Or use minified -->
-<script src="./node_modules/js-remove-vietnamese/dist/js-remove-vietnamese.min.js"></script>
-```
-
-##### 2. Download from source
-
-```html
-<script src="[path/to/dist]/js-remove-vietnamese.[min.]js"></script>
-```
-
-##### Usage
-
-```html
-<script>
-
-</script>
-```
-
 ## API
 
-### ...
+### removeVI: (text?: string, options?: Options) => string;
 
-Returns ...
+```ts
+removeVI: (text?: string, options?: Options) => string;
+```
 
++ `text`: sentense we want to convert
++ `options`: option we want to convert, can be null
+
+Returns: `string`, converted sentence.
+
+```ts
+interface Options {
+	ignoreCase: boolean;
+	replaceSpecialCharacters: boolean;
+	concatBy: string;
+}
+```
+
++ `ignoreCase`: convert all uppercase characters to lowercase. Default is `true`.
++ `replaceSpecialCharacters`: replace all special characters to `concatBy` character. Default is `true`.
++ `concatBy`: character we want to replace special characters. Default is `-`.
 
 ## Dependencies
 
 No dependencies
-
-[npm-image]: https://img.shields.io/npm/v/js-remove-vietnamese.svg?style=flat
-[npm-url]: https://www.npmjs.com/package/js-remove-vietnamese
-[downloads-image]: https://img.shields.io/npm/dm/js-remove-vietnamese.svg?style=flat
-[downloads-url]: https://www.npmjs.com/package/js-remove-vietnamese
-
 
 ## Development
 
@@ -190,7 +183,7 @@ Output directory is `dist` (defined in file `tsconfig.json`)
 yarn rollup  # defined in package.json and rollup.config.js
 ```
 
-*Requirement: package is built for Node*
+*Requirement: before run this command, package needs to build for Node first.*
 
 + Build dist (both Node and Browser)
 
@@ -202,6 +195,14 @@ yarn dist  # defined in package.json
 
 In directory `test`, we can test in environments NodeJS and Browser.
 
-File ['./test/node/index.js'](`test/node/index.js`) : test for NodeJS.
+File [`./test/node/index.js`](./test/node/index.js) : test for NodeJS.
 
-File [`./test/browser/index.html`](`test/browser/index.html`): test on Browser.
+File [`./test/browser/index.html`](./test/browser/index.html): test on Browser.
+
+
+
+[npm-image]: https://img.shields.io/npm/v/js-remove-vietnamese.svg?style=flat
+[npm-url]: https://www.npmjs.com/package/js-remove-vietnamese
+[downloads-image]: https://img.shields.io/npm/dm/js-remove-vietnamese.svg?style=flat
+[downloads-url]: https://www.npmjs.com/package/js-remove-vietnamese
+
