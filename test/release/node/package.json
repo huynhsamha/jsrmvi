@@ -1,0 +1,9 @@
+{
+  "name": "release",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "jsrmvi": "^0.0.1"
+  }
+}

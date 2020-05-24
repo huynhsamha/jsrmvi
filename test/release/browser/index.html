@@ -1,0 +1,39 @@
+<!-- object `jsrmvi` will be exported globally to window object -->
+<script src="https://unpkg.com/jsrmvi/dist/jsrmvi.min.js"></script>
+
+<script>
+	const { removeVI, DefaultOption } = jsrmvi;
+
+	console.log(jsrmvi);
+	console.log(DefaultOption);
+
+	const parttern = 'à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ|è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ|ì|í|ị|ỉ|ĩ|ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ|ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ|ỳ|ý|ỵ|ỷ|ỹ|đ';
+
+	console.log('Lowercase pattern:');
+	console.log(parttern);
+	console.log(removeVI(parttern));
+	console.log();
+
+	console.log('Uppercase pattern');
+	const upParttern = parttern.toUpperCase();
+	console.log(upParttern);
+	console.log(removeVI(upParttern));
+	console.log(removeVI(upParttern, { ignoreCase: false }));
+	console.log(removeVI(upParttern, { ignoreCase: false, concatBy: '+' }));
+	console.log(removeVI(upParttern, { ignoreCase: false, concatBy: ',' }));
+	console.log(removeVI(upParttern, { ignoreCase: false, replaceSpecialCharacters: false }));
+	console.log();
+
+	const text01 = 'Không người thân, một mình chiến đấu với Covid-19, nam phi công người Anh chấp nhận hôn mê, đặt trọn niềm tin vào bác sĩ Việt Nam.';
+	console.log('Sentence');
+	console.log(text01);
+	console.log(removeVI(text01));
+	console.log(removeVI(text01, { ignoreCase: false }));
+	console.log(removeVI(text01, { ignoreCase: false, replaceSpecialCharacters: false }));
+	console.log(removeVI(text01, { concatBy: '+' }));
+	console.log(removeVI(text01, { replaceSpecialCharacters: false }));
+	console.log();
+</script>
+
+<!-- Access from other JS file -->
+<script src="./script.js"></script>
