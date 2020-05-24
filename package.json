@@ -1,5 +1,5 @@
 {
-  "name": "js-remove-vietnamese",
+  "name": "jsrmvi",
   "version": "0.0.1",
   "description": "Convert Vietnamese words to Latin alphabet - Use for both Node.JS and Browser.",
   "author": {
@@ -9,21 +9,29 @@
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/huynhsamha/js-remove-vietnamese/issues"
+    "url": "https://github.com/huynhsamha/jsrmvi/issues"
   },
-  "homepage": "https://github.com/huynhsamha/js-remove-vietnamese#readme",
+  "homepage": "https://github.com/huynhsamha/jsrmvi#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/huynhsamha/js-remove-vietnamese.git"
+    "url": "git+https://github.com/huynhsamha/jsrmvi.git"
   },
-  "browser": "dist/jsrmvi.min.js",
+  "files": [
+    "dist/**/*",
+    "lib/**/*",
+    "index.js"
+  ],
   "scripts": {
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
     "rollup": "rollup -c",
-    "clean": "rm -rf dist",
-    "dist": "yarn clean & yarn format & yarn lint & yarn build & (sleep 4 && yarn rollup)"
+    "clean": "yarn clean:node && yarn clean:browser",
+    "dist": "yarn dist:browser",
+    "clean:node": "rm -rf lib",
+    "clean:browser": "rm -rf dist",
+    "dist:node": "yarn clean:node && yarn format && yarn lint && yarn build",
+    "dist:browser": "yarn dist:node && yarn clean:browser && yarn rollup"
   },
   "devDependencies": {
     "prettier": "^2.0.5",
@@ -36,10 +44,10 @@
     "typescript": "^3.9.2"
   },
   "keywords": [
-    "js-remove-vietnamese",
     "jsrmvi",
     "removeVI",
     "remove-unicode",
-    "remove-vietnamese"
+    "remove-vietnamese",
+    "js-remove-vietnamese"
   ]
 }

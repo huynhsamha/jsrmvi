@@ -1,3 +1,9 @@
+/**
+ * Author: <Ha Huynh> https://github.com/huynhsamha
+ * Github: https://github.com/huynhsamha/jsrmvi
+ * NPM Package: https://www.npmjs.com/package/jsrmvi
+ */
+
 interface Parttern {
 	char: string;
 	regex: RegExp;

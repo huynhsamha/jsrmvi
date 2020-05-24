@@ -1,3 +1,8 @@
+/**
+ * Author: <Ha Huynh> https://github.com/huynhsamha
+ * Github: https://github.com/huynhsamha/jsrmvi
+ * NPM Package: https://www.npmjs.com/package/jsrmvi
+ */
 interface Options {
     ignoreCase: boolean;
     replaceSpecialCharacters: boolean;
@@ -6,4 +11,3 @@ interface Options {
 declare const DefaultOption: Options;
 export declare const removeVI: (text?: string, options?: Options) => string;
 export { DefaultOption };
-//# sourceMappingURL=index.d.ts.map

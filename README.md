@@ -1,4 +1,4 @@
-# js-remove-vietnamese
+# jsrmvi
 
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][downloads-url]
@@ -10,17 +10,17 @@ Convert Vietnamese words to Latin alphabet - Use for both Node.JS and Browser.
 ### NodeJS
 
 ```bash
-npm install --save js-remove-vietnamese
+npm install --save jsrmvi
 # or
-yarn add js-remove-vietnamese
+yarn add jsrmvi
 ```
 
 ### Browser
 
-Download `jsrmvi.min.js` at [here](https://unpkg.com/js-remove-vietnamese/dist/jsrmvi.min.js) or use script tag
+Download `jsrmvi.min.js` at [here](https://unpkg.com/jsrmvi/dist/jsrmvi.min.js) or use script tag
 
 ```html
-<script src="https://unpkg.com/js-remove-vietnamese/dist/jsrmvi.min.js"></script>
+<script src="https://unpkg.com/jsrmvi/dist/jsrmvi.min.js"></script>
 <!-- or -->
 <script src="[path/to/dist]/jsrmvi.min.js"></script>
 ```
@@ -30,7 +30,7 @@ Download `jsrmvi.min.js` at [here](https://unpkg.com/js-remove-vietnamese/dist/j
 ### Node.JS
 
 ```js
-const { removeVI, DefaultOption } = require('js-remove-vietnamese');
+const { removeVI, DefaultOption } = require('jsrmvi');
 
 // Default option used in function removeVI()
 console.log(DefaultOption);
@@ -91,7 +91,7 @@ You can see more examples in directory [`./test/node/index.js`](./test/node/inde
 After load file `jsrmvi.min.js`, object `jsrmvi` will be exported globally to window object. We can access `jsrmvi` by `window.jsrmvi` or `jsrmvi` directly.
 
 ```html
-<script src="https://unpkg.com/js-remove-vietnamese/dist/jsrmvi.min.js"></script>
+<script src="https://unpkg.com/jsrmvi/dist/jsrmvi.min.js"></script>
 
 <script>
 	const { removeVI, DefaultOption } = jsrmvi;
@@ -152,8 +152,8 @@ No dependencies
 + Clone the repository and enter the project
 
 ```bash
-git clone https://github.com/huynhsamha/js-remove-vietnamese.git
-cd js-remove-vietnamese
+git clone https://github.com/huynhsamha/jsrmvi.git
+cd jsrmvi
 ```
 
 + Install dependencies
@@ -193,16 +193,17 @@ yarn dist  # defined in package.json
 
 ### Testing
 
-In directory `test`, we can test in environments NodeJS and Browser.
+In directory `test`, we can test package in environments NodeJS, Browser and pre-publish NPM package
 
-File [`./test/node/index.js`](./test/node/index.js) : test for NodeJS.
+File [`./test/node/index.js`](./test/node/index.js): test for NodeJS.
 
-File [`./test/browser/index.html`](./test/browser/index.html): test on Browser.
+File [`./test/browser/index.html`](./test/browser/index.html): test for Browser.
+
+Folder [`./test/npm`](./test/npm): test for pre-publish NPM package. We can run `npm pack` to make tarball file and move this file to the folder for testing.
 
 
-
-[npm-image]: https://img.shields.io/npm/v/js-remove-vietnamese.svg?style=flat
-[npm-url]: https://www.npmjs.com/package/js-remove-vietnamese
-[downloads-image]: https://img.shields.io/npm/dm/js-remove-vietnamese.svg?style=flat
-[downloads-url]: https://www.npmjs.com/package/js-remove-vietnamese
+[npm-image]: https://img.shields.io/npm/v/jsrmvi.svg?style=flat
+[npm-url]: https://www.npmjs.com/package/jsrmvi
+[downloads-image]: https://img.shields.io/npm/dm/jsrmvi.svg?style=flat
+[downloads-url]: https://www.npmjs.com/package/jsrmvi
 
