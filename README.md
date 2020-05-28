@@ -84,7 +84,7 @@ interface Options {
 
 #### More examples
 
-You can see more examples in directory [`./test/node/index.js`](./test/node/index.js)
+You can see more examples in directory [`./test/node/src/es5.js`](./test/node/src/es5.js)
 
 ### Browser
 
@@ -195,7 +195,7 @@ yarn dist  # defined in package.json
 
 In directory `test`, we can test package in environments NodeJS, Browser and pre-publish NPM package
 
-File [`./test/node/index.js`](./test/node/index.js): test for NodeJS.
+File [`./test/node/src/es5.js`](./test/node/src/es5.js): test for NodeJS.
 
 File [`./test/browser/index.html`](./test/browser/index.html): test for Browser.
 
