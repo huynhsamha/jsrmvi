@@ -1,4 +1,9 @@
+const assert = require('assert');
+import jsrmvi from 'jsrmvi';
 import { removeVI, DefaultOption } from 'jsrmvi';
+
+assert.equal(jsrmvi.removeVI, removeVI);
+assert.equal(jsrmvi.DefaultOption, DefaultOption);
 
 console.log(DefaultOption);
 /*

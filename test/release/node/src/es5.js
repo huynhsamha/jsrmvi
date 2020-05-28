@@ -1,4 +1,9 @@
+const assert = require('assert');
+const jsrmvi = require('jsrmvi');
 const { removeVI, DefaultOption } = require('jsrmvi');
+
+assert.equal(jsrmvi.removeVI, removeVI);
+assert.equal(jsrmvi.DefaultOption, DefaultOption);
 
 console.log(DefaultOption);
 /*

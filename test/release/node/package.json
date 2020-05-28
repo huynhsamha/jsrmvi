@@ -8,7 +8,7 @@
     "es6": "babel-node src/es6.js"
   },
   "dependencies": {
-    "jsrmvi": "0.0.2"
+    "jsrmvi": "0.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
