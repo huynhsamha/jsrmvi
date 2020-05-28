@@ -1,6 +1,6 @@
 {
   "name": "jsrmvi",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Convert Vietnamese words to Latin alphabet - Use for both Node.JS and Browser.",
   "author": {
     "name": "huynhsamha",

@@ -50,7 +50,7 @@ export const removeVI = (text: string = '', options: Options = DefaultOption) =>
 		concatBy = DefaultOption.concatBy,
 	} = options;
 
-	let res = text;
+	let res = text || '';
 	if (ignoreCase) {
 		res = res.toLowerCase();
 	}

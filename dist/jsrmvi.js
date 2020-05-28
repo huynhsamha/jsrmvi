@@ -46,7 +46,7 @@ var jsrmvi = (function (exports) {
 	    if (text === void 0) { text = ''; }
 	    if (options === void 0) { options = DefaultOption; }
 	    var _a = options.ignoreCase, ignoreCase = _a === void 0 ? DefaultOption.ignoreCase : _a, _b = options.replaceSpecialCharacters, replaceSpecialCharacters = _b === void 0 ? DefaultOption.replaceSpecialCharacters : _b, _c = options.concatBy, concatBy = _c === void 0 ? DefaultOption.concatBy : _c;
-	    var res = text;
+	    var res = text || '';
 	    if (ignoreCase) {
 	        res = res.toLowerCase();
 	    }

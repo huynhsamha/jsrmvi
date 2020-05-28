@@ -2,6 +2,6 @@
 # yarn lockfile v1
 
 
-"jsrmvi@file:jsrmvi-0.0.1.tgz":
-  version "0.0.1"
-  resolved "file:jsrmvi-0.0.1.tgz#228f699d23cd1127f69aec59218ae87ab1638327"
+"jsrmvi@file:jsrmvi-0.0.2.tgz":
+  version "0.0.2"
+  resolved "file:jsrmvi-0.0.2.tgz#272b21ee265e8e9c8091dbe5fb0bbf4b6529b6cd"

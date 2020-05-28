@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const { removeVI, DefaultOption } = require('../../dist/index');
+const { removeVI, DefaultOption } = require('../../index');
 
 console.log(DefaultOption);
 /*
@@ -10,6 +10,20 @@ console.log(DefaultOption);
   replaceSpecialCharacters: true,
   concatBy: '-'
 }
+*/
+
+console.log('Null or empty text:');
+console.log('1: ' + removeVI());
+console.log('2: ' + removeVI(null));
+console.log('3: ' + removeVI(undefined));
+console.log('4: ' + removeVI(''));
+console.log();
+/*
+Null or empty text:
+1:
+2:
+3:
+4:
 */
 
 const parttern = 'à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ|è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ|ì|í|ị|ỉ|ĩ|ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ|ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ|ỳ|ý|ỵ|ỷ|ỹ|đ';
