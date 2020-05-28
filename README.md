@@ -1,7 +1,11 @@
 # jsrmvi
 
-[![NPM version][npm-image]][npm-url]
-[![NPM downloads][downloads-image]][downloads-url]
+[![NPM version][https://img.shields.io/npm/v/jsrmvi.svg?style=flat]][https://www.npmjs.com/package/jsrmvi]
+[![NPM downloads][https://img.shields.io/npm/dm/jsrmvi.svg?style=flat]][https://www.npmjs.com/package/jsrmvi]
+[![GitHub release](https://img.shields.io/github/release/huynhsamha/jsrmvi.svg)](https://gitHub.com/huynhsamha/jsrmvi/releases)
+[![GitHub tag](https://img.shields.io/github/tag/huynhsamha/jsrmvi.svg)](https://GitHub.com/huynhsamha/jsrmvi/tags)
+![](https://img.badgesize.io/huynhsamha/jsrmvi/master/dist/jsrmvi.min.js.svg?label=jsrmvi.min.js)
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 
 🇻🇳 Convert Vietnamese words to Latin alphabet 🇻🇳 Use for both Node.JS and Browser.
 
@@ -20,8 +24,13 @@ yarn add jsrmvi
 Download `jsrmvi.min.js` at [here](https://unpkg.com/jsrmvi/dist/jsrmvi.min.js) or use script tag
 
 ```html
+<!-- CDNs -->
+<!-- Use [s] -->
+<script src="https://cdn.jsdelivr.net/jsrmvi/dist/jsrmvi.min.js"></script>
+<!-- Use [unpkg] -->
 <script src="https://unpkg.com/jsrmvi/dist/jsrmvi.min.js"></script>
-<!-- or -->
+
+<!-- or download directly -->
 <script src="[path/to/dist]/jsrmvi.min.js"></script>
 ```
 
@@ -216,10 +225,3 @@ File [`./test/node/src/es5.js`](./test/node/src/es5.js): test for NodeJS.
 File [`./test/browser/index.html`](./test/browser/index.html): test for Browser.
 
 Folder [`./test/npm`](./test/npm): test for pre-publish NPM package. We can run `npm pack` to make tarball file and move this file to the folder for testing.
-
-
-[npm-image]: https://img.shields.io/npm/v/jsrmvi.svg?style=flat
-[npm-url]: https://www.npmjs.com/package/jsrmvi
-[downloads-image]: https://img.shields.io/npm/dm/jsrmvi.svg?style=flat
-[downloads-url]: https://www.npmjs.com/package/jsrmvi
-
