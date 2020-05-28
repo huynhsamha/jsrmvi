@@ -73,3 +73,10 @@ export const removeVI = (text: string = '', options: Options = DefaultOption) =>
 };
 
 export { DefaultOption };
+
+const jsrmvi = {
+	removeVI,
+	DefaultOption,
+};
+
+export default jsrmvi;

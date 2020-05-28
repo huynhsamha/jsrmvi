@@ -11,3 +11,8 @@ interface Options {
 declare const DefaultOption: Options;
 export declare const removeVI: (text?: string, options?: Options) => string;
 export { DefaultOption };
+declare const jsrmvi: {
+    removeVI: (text?: string, options?: Options) => string;
+    DefaultOption: Options;
+};
+export default jsrmvi;

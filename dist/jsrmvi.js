@@ -67,6 +67,11 @@ var jsrmvi = (function (exports) {
 	    }
 	    return res;
 	};
+	var jsrmvi = {
+	    removeVI: exports.removeVI,
+	    DefaultOption: DefaultOption,
+	};
+	exports.default = jsrmvi;
 	});
 
 	var index = unwrapExports(lib);

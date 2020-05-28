@@ -29,7 +29,12 @@ Download `jsrmvi.min.js` at [here](https://unpkg.com/jsrmvi/dist/jsrmvi.min.js) 
 
 ### Node.JS
 
+#### Syntax `require()`
+
 ```js
+const jsrmvi = require('jsrmvi');
+const { removeVI, DefaultOption } = jsrmvi;
+// or
 const { removeVI, DefaultOption } = require('jsrmvi');
 
 // Default option used in function removeVI()
@@ -41,6 +46,15 @@ console.log(DefaultOption);
   concatBy: '-'
 }
 */
+```
+
+#### Syntax `import`
+
+```js
+import jsrmvi from 'jsrmvi';
+const { removeVI, DefaultOption } = jsrmvi;
+// or
+import { removeVI, DefaultOption } from 'jsrmvi';
 ```
 
 #### Example for a vietnamese sentence:
@@ -118,16 +132,18 @@ Output on browser for examples in file [`test/browser/index.html`](./test/browse
 
 ## API
 
-### removeVI: (text?: string, options?: Options) => string;
+### removeVI
+
+**Method**
 
 ```ts
-removeVI: (text?: string, options?: Options) => string;
+removeVI = (text?: string, options?: Options) => string;
 ```
 
 + `text`: sentense we want to convert
 + `options`: option we want to convert, can be null
 
-Returns: `string`, converted sentence.
+**Return**: `string`, converted sentence.
 
 ```ts
 interface Options {
