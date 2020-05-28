@@ -1,10 +1,15 @@
 # jsrmvi
 
-[![NPM version][https://img.shields.io/npm/v/jsrmvi.svg?style=flat]](https://www.npmjs.com/package/jsrmvi)
-[![NPM downloads][https://img.shields.io/npm/dm/jsrmvi.svg?style=flat]](https://www.npmjs.com/package/jsrmvi)
+[![NPM version][npm-image]][npm-url]
+[![NPM downloads][downloads-image]][downloads-url]
 [![GitHub tag](https://img.shields.io/github/tag/huynhsamha/jsrmvi.svg)](https://GitHub.com/huynhsamha/jsrmvi/tags)
 ![File size](https://img.badgesize.io/huynhsamha/jsrmvi/master/dist/jsrmvi.min.js.svg?label=jsrmvi.min.js)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+
+[npm-image]: https://img.shields.io/npm/v/jsrmvi.svg?style=flat
+[npm-url]: https://www.npmjs.com/package/jsrmvi
+[downloads-image]: https://img.shields.io/npm/dm/jsrmvi.svg?style=flat
+[downloads-url]: https://www.npmjs.com/package/jsrmvi
 
 🇻🇳 Convert Vietnamese words to Latin alphabet 🇻🇳 Use for both Node.JS and Browser.
 
