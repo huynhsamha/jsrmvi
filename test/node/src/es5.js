@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const { removeVI, DefaultOption } = require('../../index');
+const { removeVI, DefaultOption } = require('../../../index');
 
 console.log(DefaultOption);
 /*
@@ -76,7 +76,7 @@ khong+nguoi+than+mot+minh+chien+dau+voi+covid+19+nam+phi+cong+nguoi+anh+chap+nha
 khong nguoi than, mot minh chien dau voi covid-19, nam phi cong nguoi anh chap nhan hon me, dat tron niem tin vao bac si viet nam.
 */
 
-const text02 = fs.readFileSync(path.join(__dirname, './samples/text.txt'), { encoding: 'utf8' });
+const text02 = fs.readFileSync(path.join(__dirname, '../samples/text.txt'), { encoding: 'utf8' });
 console.log('Paragraph');
 console.log(text02);
 console.log(removeVI(text02, { ignoreCase: false, replaceSpecialCharacters: false }));
