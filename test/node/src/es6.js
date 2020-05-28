@@ -1,7 +1,12 @@
 const fs = require('fs');
 const path = require('path');
+const assert = require('assert');
 
+import jsrmvi from '../../../index';
 import { removeVI, DefaultOption } from '../../../index';
+
+assert.equal(jsrmvi.removeVI, removeVI);
+assert.equal(jsrmvi.DefaultOption, DefaultOption);
 
 console.log(DefaultOption);
 /*
