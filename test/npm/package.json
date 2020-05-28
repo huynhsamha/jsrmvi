@@ -9,7 +9,7 @@
     "clean": "rm -rf jsrmvi-*.tgz"
   },
   "dependencies": {
-    "jsrmvi": "file:jsrmvi-0.0.2.tgz"
+    "jsrmvi": "file:jsrmvi-0.0.3.tgz"
   },
   "devDependencies": {
     "@babel/core": "^7.10.1",
