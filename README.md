@@ -15,7 +15,7 @@
 
 ## Installation
 
-### NodeJS
+### Node.JS
 
 ```bash
 npm install --save jsrmvi
@@ -25,16 +25,16 @@ yarn add jsrmvi
 
 ### Browser
 
-Download `jsrmvi.min.js` at [here](https://unpkg.com/jsrmvi/dist/jsrmvi.min.js) or use script tag
+Download file `jsrmvi.min.js` at [here](https://github.com/huynhsamha/jsrmvi/blob/master/dist/jsrmvi.min.js) or we can use CDN for NPM such as [unpkg](https://unpkg.com/) or [jsDelivr](https://www.jsdelivr.com/).
 
 ```html
-<!-- CDNs -->
-<!-- Use [s] -->
+<!-- Use CDN -->
+<!-- use jsDelivr -->
 <script src="https://cdn.jsdelivr.net/jsrmvi/dist/jsrmvi.min.js"></script>
-<!-- Use [unpkg] -->
+<!-- or use unpkg -->
 <script src="https://unpkg.com/jsrmvi/dist/jsrmvi.min.js"></script>
 
-<!-- or download directly -->
+<!-- or download file directly -->
 <script src="[path/to/dist]/jsrmvi.min.js"></script>
 ```
 
@@ -42,7 +42,7 @@ Download `jsrmvi.min.js` at [here](https://unpkg.com/jsrmvi/dist/jsrmvi.min.js) 
 
 ### Node.JS
 
-#### Syntax `require()`
+#### Syntax `require`
 
 ```js
 const jsrmvi = require('jsrmvi');
@@ -70,7 +70,9 @@ const { removeVI, DefaultOption } = jsrmvi;
 import { removeVI, DefaultOption } from 'jsrmvi';
 ```
 
-#### Example for a vietnamese sentence:
+#### Example
+
+##### For a vietnamese sentence
 
 ```js
 const text01 = 'Không người thân, một mình chiến đấu với Covid-19, nam phi công người Anh chấp nhận hôn mê, đặt trọn niềm tin vào bác sĩ Việt Nam.';
@@ -92,9 +94,46 @@ khong nguoi than, mot minh chien dau voi covid-19, nam phi cong nguoi anh chap n
 */
 ```
 
+##### For an empty or null text
+
+```js
+console.log('Null or empty text:');
+console.log('1: ' + removeVI());
+console.log('2: ' + removeVI(null));
+console.log('3: ' + removeVI(undefined));
+console.log('4: ' + removeVI(''));
+console.log();
+/*
+Null or empty text:
+1:
+2:
+3:
+4:
+*/
+```
+
+##### For a paragraph
+
+```js
+const text02 = fs.readFileSync(path.join(__dirname, '../samples/text.txt'), { encoding: 'utf8' });
+console.log('Paragraph');
+console.log(text02);
+console.log(removeVI(text02, { ignoreCase: false, replaceSpecialCharacters: false }));
+console.log();
+/*
+Paragraph
+Trong cơn mưa chiều 22/5, các bác sĩ Bệnh viện Bệnh Nhiệt đới TP.HCM và Bệnh viện Chợ Rẫy khẩn trương vận chuyển bệnh nhân 91 (nam phi công người Anh, 43 tuổi) lên xe cứu thương. Bệnh nhân di chuyển cùng hệ thống máy ECMO, máy lọc máu và dây nhợ chằng chịt.
+Trước đó, Bệnh viện Chợ Rẫy đã phong toả toàn bộ lối đi chính, hơn chục bảo vệ và lực lượng công an bố trí dọn đường. Bệnh nhân đi đến đâu, con đường phía sau được xịt khuẩn đến đó.
+
+Trong con mua chieu 22/5, cac bac si Benh vien Benh Nhiet doi TP.HCM va Benh vien Cho Ray khan truong van chuyen benh nhan 91 (nam phi cong nguoi Anh, 43 tuoi) len xe cuu thuong. Benh nhan di chuyen cung he thong may ECMO, may loc mau va day nho chang chit.
+Truoc do, Benh vien Cho Ray da phong toa toan bo loi di chinh, hon chuc bao ve va luc luong cong an bo tri don duong. Benh nhan di den dau, con duong phia sau duoc xit khuan den do.
+
+*/
+```
+
 #### Options
 
-In `TypeScript`, we define interface `Options`:
+In `TypeScript`, we define the interface `Options`:
 
 ```ts
 interface Options {
@@ -115,7 +154,7 @@ You can see more examples in directory [`./test/node/src/es5.js`](./test/node/sr
 
 ### Browser
 
-After load file `jsrmvi.min.js`, object `jsrmvi` will be exported globally to window object. We can access `jsrmvi` by `window.jsrmvi` or `jsrmvi` directly.
+After file `jsrmvi.min.js` is loaded, object `jsrmvi` will be exported globally to `window` object. We can access `jsrmvi` by `window.jsrmvi` or `jsrmvi` directly.
 
 ```html
 <script src="https://unpkg.com/jsrmvi/dist/jsrmvi.min.js"></script>
@@ -153,8 +192,8 @@ Output on browser for examples in file [`test/browser/index.html`](./test/browse
 removeVI = (text?: string, options?: Options) => string;
 ```
 
-+ `text`: sentense we want to convert
-+ `options`: option we want to convert, can be null
++ `text`: sentense we want to convert, can be null.
++ `options`: option we want to convert, can be null.
 
 **Return**: `string`, converted sentence.
 
@@ -201,7 +240,7 @@ yarn lint   # defined in package.json
 + Build package for Node
 
 ```bash
-yarn build  # defined in package.json
+yarn dist:node  # defined in package.json
 ```
 
 Output directory is `dist` (defined in file `tsconfig.json`)
@@ -209,10 +248,8 @@ Output directory is `dist` (defined in file `tsconfig.json`)
 + Build package for Browser
 
 ```bash
-yarn rollup  # defined in package.json and rollup.config.js
+yarn dist:browser  # defined in package.json and rollup.config.js
 ```
-
-*Requirement: before run this command, package needs to build for Node first.*
 
 + Build dist (both Node and Browser)
 
@@ -222,10 +259,9 @@ yarn dist  # defined in package.json
 
 ### Testing
 
-In directory `test`, we can test package in environments NodeJS, Browser and pre-publish NPM package
+In directory `test`, we can test the package in environments NodeJS, Browser, pre-published NPM package and the released package.
 
-File [`./test/node/src/es5.js`](./test/node/src/es5.js): test for NodeJS.
-
-File [`./test/browser/index.html`](./test/browser/index.html): test for Browser.
-
-Folder [`./test/npm`](./test/npm): test for pre-publish NPM package. We can run `npm pack` to make tarball file and move this file to the folder for testing.
++ Folder [`./test/node`](./test/node): test for NodeJS in development.
++ Folder [`./test/browser`](./test/browser): test for Browser in development.
++ Folder [`./test/npm`](./test/npm): test for pre-published NPM package. We need to run `npm pack` to make tarball file and move this file to the folder for testing.
++ Folder [`./test/release`](./test/release): test the released package.

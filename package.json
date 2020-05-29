@@ -1,17 +1,17 @@
 {
   "name": "jsrmvi",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Convert Vietnamese words to Latin alphabet - Use for both Node.JS and Browser.",
   "author": {
     "name": "huynhsamha",
     "email": "huynhsamha@gmail.com",
     "url": "https://github.com/huynhsamha"
   },
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/huynhsamha/jsrmvi/issues"
   },
-  "homepage": "https://github.com/huynhsamha/jsrmvi#readme",
+  "homepage": "https://github.com/huynhsamha/jsrmvi",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/huynhsamha/jsrmvi.git"
@@ -48,6 +48,7 @@
     "removeVI",
     "remove-unicode",
     "remove-vietnamese",
-    "js-remove-vietnamese"
+    "js-remove-vietnamese",
+    "remove-accents"
   ]
 }
