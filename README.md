@@ -75,7 +75,8 @@ import { removeVI, DefaultOption } from 'jsrmvi';
 ##### For a vietnamese sentence
 
 ```js
-const text01 = 'Không người thân, một mình chiến đấu với Covid-19, nam phi công người Anh chấp nhận hôn mê, đặt trọn niềm tin vào bác sĩ Việt Nam.';
+const text01 =
+	'Không người thân, một mình chiến đấu với Covid-19, nam phi công người Anh chấp nhận hôn mê, đặt trọn niềm tin vào bác sĩ Việt Nam.';
 console.log('Sentence');
 console.log(text01);
 console.log(removeVI(text01));
@@ -143,10 +144,9 @@ interface Options {
 }
 ```
 
-+ `ignoreCase`: convert all uppercase characters to lowercase. Default is `true`.
-+ `replaceSpecialCharacters`: replace all special characters to `concatBy` character. Default is `true`.
-+ `concatBy`: character we want to replace special characters. Default is `-`.
-
+- `ignoreCase`: convert all uppercase characters to lowercase. Default is `true`.
+- `replaceSpecialCharacters`: replace all special characters to `concatBy` character. Default is `true`.
+- `concatBy`: character we want to replace special characters. Default is `-`.
 
 #### More examples
 
@@ -165,7 +165,8 @@ After file `jsrmvi.min.js` is loaded, object `jsrmvi` will be exported globally 
 	console.log(jsrmvi);
 	console.log(DefaultOption);
 
-	const text01 = 'Không người thân, một mình chiến đấu với Covid-19, nam phi công người Anh chấp nhận hôn mê, đặt trọn niềm tin vào bác sĩ Việt Nam.';
+	const text01 =
+		'Không người thân, một mình chiến đấu với Covid-19, nam phi công người Anh chấp nhận hôn mê, đặt trọn niềm tin vào bác sĩ Việt Nam.';
 	console.log('Sentence');
 	console.log(text01);
 	console.log(removeVI(text01));
@@ -192,8 +193,8 @@ Output on browser for examples in file [`test/browser/index.html`](./test/browse
 removeVI = (text?: string, options?: Options) => string;
 ```
 
-+ `text`: sentense we want to convert, can be null.
-+ `options`: option we want to convert, can be null.
+- `text`: sentense we want to convert, can be null.
+- `options`: option we want to convert, can be null.
 
 **Return**: `string`, converted sentence.
 
@@ -205,9 +206,9 @@ interface Options {
 }
 ```
 
-+ `ignoreCase`: convert all uppercase characters to lowercase. Default is `true`.
-+ `replaceSpecialCharacters`: replace all special characters to `concatBy` character. Default is `true`.
-+ `concatBy`: character we want to replace special characters. Default is `-`.
+- `ignoreCase`: convert all uppercase characters to lowercase. Default is `true`.
+- `replaceSpecialCharacters`: replace all special characters to `concatBy` character. Default is `true`.
+- `concatBy`: character we want to replace special characters. Default is `-`.
 
 ## Dependencies
 
@@ -217,27 +218,27 @@ No dependencies
 
 ### Quickstart
 
-+ Clone the repository and enter the project
+- Clone the repository and enter the project
 
 ```bash
 git clone https://github.com/huynhsamha/jsrmvi.git
 cd jsrmvi
 ```
 
-+ Install dependencies
+- Install dependencies
 
 ```bash
 yarn
 ```
 
-+ Lint and format source (directory `src`)
+- Lint and format source (directory `src`)
 
 ```bash
 yarn format # defined in package.json
 yarn lint   # defined in package.json
 ```
 
-+ Build package for Node
+- Build package for Node
 
 ```bash
 yarn dist:node  # defined in package.json
@@ -245,13 +246,13 @@ yarn dist:node  # defined in package.json
 
 Output directory is `dist` (defined in file `tsconfig.json`)
 
-+ Build package for Browser
+- Build package for Browser
 
 ```bash
 yarn dist:browser  # defined in package.json and rollup.config.js
 ```
 
-+ Build dist (both Node and Browser)
+- Build dist (both Node and Browser)
 
 ```bash
 yarn dist  # defined in package.json
@@ -261,7 +262,7 @@ yarn dist  # defined in package.json
 
 In directory `test`, we can test the package in environments NodeJS, Browser, pre-published NPM package and the released package.
 
-+ Folder [`./test/node`](./test/node): test for NodeJS in development.
-+ Folder [`./test/browser`](./test/browser): test for Browser in development.
-+ Folder [`./test/npm`](./test/npm): test for pre-published NPM package. We need to run `npm pack` to make tarball file and move this file to the folder for testing.
-+ Folder [`./test/release`](./test/release): test the released package.
+- Folder [`./test/node`](./test/node): test for NodeJS in development.
+- Folder [`./test/browser`](./test/browser): test for Browser in development.
+- Folder [`./test/npm`](./test/npm): test for pre-published NPM package. We need to run `npm pack` to make tarball file and move this file to the folder for testing.
+- Folder [`./test/release`](./test/release): test the released package.
